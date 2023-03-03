@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flask Survey</title>
+</head>
+<body>
+  {% with messages = get_flashed_messages() %} 
+<!-- A Jinja2 template tag that assigns the result of the "get_flashed_messages()" function to a variable named "messages" -->
+    {% if messages %} 
+<!-- A Jinja2 template control flow statement that checks if the "messages" variable is not empty -->
+      {% for msg in messages %} 
+<!-- A Jinja2 template loop statement that iterates over each message in the "messages" list -->
+        <p>{{ msg }}</p> 
+<!-- A Jinja2 template variable that displays the message on the HTML page -->
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  {% block content %} 
+<!-- A Jinja2 template block that can be overridden by child templates -->
+  {% endblock %}
+</body>
+</html>
